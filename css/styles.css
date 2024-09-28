@@ -7,12 +7,16 @@ html, body {
     user-select: none;  /* Disable text selection */
     width: 100%;
     height: 100%;
+    /* background-image: url("../assets/bgr1.png"); */
+    background-color: #4f0e55;
 }
 
 #game-container {
     position: relative;
     width: 100vw;
     height: 100vh;
+    
+
 }
 
 #game-canvas {
@@ -22,10 +26,88 @@ html, body {
     top: 0;
     left: 0;
     z-index: 1; /* Make sure it's behind the other UI elements */
+    background-color: #4f0e55;
+    
+    
+
+}
+
+#start-screen, #game-over-screen {
+
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    text-align: center;
+   
+}
+
+#start-screen h1, #game-over-screen h1 {
+    font-size: 48px;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 50px;
+    font-family:sans-serif;
+    color: #e0a80b ; 
+    
+}
+
+#game-over-screen p {
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #000;
+    margin: 50px;
+    font-family:sans-serif;
+    color: #ffffff ; 
+    
 }
 
 
+#user-id-section {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center; /* Centers elements horizontally */
+    gap: 10px; /* Adds space between each element */
+}
 
+#user-id-input {
+    padding: 20px 40px;
+    font-size: 18px;
+    border-radius: 1em;
+    border: 2px solid #028d86;
+    margin-top: 10px;
+    text-align: center;
+    font-family:sans-serif;
+    color: #e0a80b ; 
+
+
+}
+
+
+#submit-id-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    background-color: #028d86;
+    border-radius: 1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#user-id-section h2{
+
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 40px;
+    font-family:sans-serif;
+    color: #e0a80b ; 
+
+
+}
 
 
 
@@ -42,18 +124,70 @@ html, body {
 
 #score-bar {
     top: 10px;
-    right: 10px;
+    right: 10px; /* Position the score to the top-right */
     font-size: 24px;
-    color: white;
+    font-family: sans-serif;
+    color: #e0a80b; 
 }
 
 #life-counter {
     top: 10px;
-    right: 150px;
+    left: 10px; /* Change to 'left' to move the hearts to the top-left */
 }
 
 .life {
     width: 40px;
     height: 40px;
-    margin-left: 10px;
+    margin-right: 10px; /* Adjust spacing between the heart images */
+}
+
+#start-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    background-color: #028d86;
+    border-radius: 1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#restart-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    background-color: #028d86;
+    border-radius: 1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+
+.logo {
+    padding-top: 50px;
+    display: block;
+    margin: 5px auto; /* Center the logo */
+    width: 300px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.ninja-logo{
+    padding-top: 100px;
+    display: block;
+    margin:  auto; /* Center the logo */
+    width: 400px; /* Adjust the width as needed */
+    height: auto;
+
+}
+
+.bottom-image {
+    display: block;
+    margin: 20px auto; /* Center the image */
+    width: 150px; /* Adjust the width as needed */
+    height: auto;
+    position: absolute;
+    bottom: 10px; /* Position it at the bottom of the screen */
+    left: 50%;
+    transform: translateX(-50%); /* Center the image horizontally */
 }

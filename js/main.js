@@ -9,19 +9,39 @@ let gravity;
 let previousTouchPosition = null;
 let life_up;
 
+const sliceSound = new Audio('assets/slice.mp3');
+sliceSound.playbackRate = 2.5;
+sliceSound.volume = 0.5;
+
 // Set up the scene, camera, and renderer for 3D game canvas
 const scene = new THREE.Scene();
+scene.background = new THREE.Color( '#4f0e55' );
+
+
+
+// Load the logo texture
+const logoTexture = new THREE.TextureLoader().load('assets/logo_neg.png');
+const logoMaterial = new THREE.SpriteMaterial({ map: logoTexture, transparent: true });
+const logoSprite = new THREE.Sprite(logoMaterial);
+logoSprite.scale.set(1.5, 1.5, 1.5);  // Adjust scale as necessary
+logoSprite.position.set(0, 0, 0);  // Center position in the scene
+scene.add(logoSprite);
+
+
+
+
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
 
 // Main 3D game canvas and renderer
 const canvas = document.getElementById('game-canvas');
-const renderer = new THREE.WebGLRenderer({ canvas: canvas });
+const renderer = new THREE.WebGLRenderer({ canvas: canvas});
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 // Separate 2D canvas for slice traces
 const sliceCanvas = document.getElementById('slice-canvas');
 const sliceCtx = sliceCanvas.getContext("2d");
+
 
 // Ensure both canvases resize correctly
 function onWindowResize() {
@@ -211,6 +231,10 @@ function createFood() {
 }
 
 function sliceFood(food) {
+    sliceSound.currentTime = 0.01;  // Reset sound to start (in case it's played repeatedly)
+    
+    sliceSound.play();
+    
     scene.remove(food);
     food.sliced = true;
     foodItems = foodItems.filter(f => f !== food);

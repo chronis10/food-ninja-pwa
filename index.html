@@ -11,13 +11,18 @@
     <div id="game-container">
         <!-- Start Screen -->
         <div id="start-screen" class="screen">
-            <h1>Food Ninja</h1>
+            <img src="assets/ninja-logo.png" alt="Game Logo" class="ninja-logo">
+            <img src="assets/logo.png" alt="Game Logo" class="logo"> <!-- Add logo image -->
+            <!-- <h1>Food Ninja</h1> -->
+            
             <div id="user-id-section">
                 <h2>Enter User ID</h2>
                 <input type="text" id="user-id-input" placeholder="Enter your ID">
                 <button id="submit-id-button">Start Game</button>
             </div>
             <button id="start-button" class="hidden">Start Game</button>
+            
+            <img src="assets/eu.png" alt="Bottom Image" class="bottom-image">
         </div>
 
         <!-- Game Screen -->
@@ -38,9 +43,12 @@
 
         <!-- Game Over Screen -->
         <div id="game-over-screen" class="screen hidden">
-            <h2>Game Over</h2>
+            <img src="assets/ninja-logo.png" alt="Game Logo" class="ninja-logo">
+            <!-- <img src="assets/logo.png" alt="Game Logo" class="logo"> -->
+            <h1>Game Over</h1>
             <p>Your Score: <span id="final-score"></span></p>
             <button id="restart-button">Restart Game</button>
+            <img src="assets/eu.png" alt="Bottom Image" class="bottom-image">
         </div>
     </div>
 
