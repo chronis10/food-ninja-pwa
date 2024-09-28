@@ -1,0 +1,59 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;  /* Prevent body scrolling */
+    overscroll-behavior: none;  /* Prevent bounce effect on iOS */
+    touch-action: none;  /* Prevent default touch actions */
+    user-select: none;  /* Disable text selection */
+    width: 100%;
+    height: 100%;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-canvas {
+    width: 100vw; /* 100% viewport width */
+    height: 100vh; /* 100% viewport height */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Make sure it's behind the other UI elements */
+}
+
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+
+
+#score-bar, #life-counter {
+    position: absolute;
+    z-index: 2;
+}
+
+#score-bar {
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: white;
+}
+
+#life-counter {
+    top: 10px;
+    right: 150px;
+}
+
+.life {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
